@@ -1,7 +1,7 @@
 ---
 title: git ssh config
 date: 2019-03-15 14:28:25
-tags:
+tags: [Git]
 ---
 
 生成rsa
