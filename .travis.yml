@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - lts/*
+branches:
+  only:
+  - master
 install: yarn
 before_script:
 - npm install hexo -g
