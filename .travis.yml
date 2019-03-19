@@ -1,6 +1,16 @@
 language: node_js
 node_js:
   - "lts/*"
+
+install: yarn
+
 before_script:
   - npm install hexo -g
-install: yarn
+
+script:
+  - hexo g
+
+after_script:
+  - cd ./public
+  - ls
+
