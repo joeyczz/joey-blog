@@ -10,7 +10,7 @@ addons:
   ssh_known_hosts: 104.224.131.116:29797
 after_script:
 - ssh root@104.224.131.116 "/joey/front/script/blogClean.sh"
-- scp -r -P 29797 ./public/ root@104.224.131.116:/joey/front/blog
+- scp -r -P 29797 ./public/* root@104.224.131.116:/joey/front/blog
 before_install:
 - openssl aes-256-cbc -K $encrypted_b0b39623767b_key -iv $encrypted_b0b39623767b_iv
   -in travis.enc -out ~/.ssh/id_rsa -d
