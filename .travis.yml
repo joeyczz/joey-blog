@@ -3,4 +3,4 @@ node_js:
   - "lts/*"
 before_script:
   - npm install hexo -g
-install: yarn;hexo g;
+install: yarn
