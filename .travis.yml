@@ -1,16 +1,17 @@
 language: node_js
 node_js:
-  - "lts/*"
-
+- lts/*
 install: yarn
-
 before_script:
-  - npm install hexo -g
-
+- npm install hexo -g
 script:
-  - hexo g
-
+- hexo g
 after_script:
-  - cd ./public
-  - ls
-
+- cd ./public
+- ls
+- scp -P 29797 ./* root@joeycaa.xya:/joey/front/blog
+before_install:
+- openssl aes-256-cbc -K $encrypted_b0b39623767b_key -iv $encrypted_b0b39623767b_iv
+  -in id_rsa.enc -out id_rsa -d
+addons:
+  ssh_known_hosts: joeycaa.xyz:29797
