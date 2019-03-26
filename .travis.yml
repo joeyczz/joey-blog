@@ -3,7 +3,7 @@ language: node_js
 # 版本
 node_js:
 - lts/*
-# test
+# test commit message 以 deploy 开始才执行
 if: commit_message =~ /deploy*/:
 # 分支
 branches:
