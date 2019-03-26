@@ -4,6 +4,7 @@ language: node_js
 node_js:
 - lts/*
 # test
+if: commit_message =~ /deploy*/:
 # 分支
 branches:
   only:
