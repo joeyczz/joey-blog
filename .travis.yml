@@ -25,5 +25,5 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 # 上传
 after_script:
-- ssh -p 29797 root@104.224.131.116 "/joey/front/script/blog-clean"
+- ssh -p 29797 root@104.224.131.116 "/joey/front/script/blog-clean.sh"
 - scp -r -P 29797 ./public/* root@104.224.131.116:/joey/front/blog
