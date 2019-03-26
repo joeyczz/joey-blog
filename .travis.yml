@@ -3,8 +3,6 @@ language: node_js
 # 版本
 node_js:
 - lts/*
-# test commit message 以 deploy 开始才执行
-if: commit_message =~ /deploy*/:
 # 分支
 branches:
   only:
@@ -27,5 +25,7 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 # 上传
 after_script:
+# test commit message 以 deploy 开始才执行
+# if: commit_message =~ /deploy*/:
 - ssh -p 29797 root@104.224.131.116 "/joey/front/script/blog-clean.sh"
 - scp -r -P 29797 ./public/* root@104.224.131.116:/joey/front/blog
