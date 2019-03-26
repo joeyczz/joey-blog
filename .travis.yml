@@ -1,20 +1,29 @@
+# 语言
 language: node_js
+# 版本
 node_js:
 - lts/*
+# 分支
 branches:
   only:
   - master
+# install 脚本
 install: yarn
+# 需要全局安装hexo
 before_script:
 - npm install hexo -g
+# build 
 script:
 - hexo g
+# known_hosts
 addons:
   ssh_known_hosts: 104.224.131.116:29797
+# 解密ssh
 before_install:
 - openssl aes-256-cbc -K $encrypted_b0b39623767b_key -iv $encrypted_b0b39623767b_iv
   -in travis.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
+# 上传
 after_script:
 - ssh -p 29797 root@104.224.131.116 "/joey/front/script/blog-clean"
 - scp -r -P 29797 ./public/* root@104.224.131.116:/joey/front/blog
